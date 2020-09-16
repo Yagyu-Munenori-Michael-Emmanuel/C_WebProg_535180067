@@ -1,0 +1,31 @@
+html {
+    background-image: url(img.jpg);
+    background-size: cover;
+    padding: 70px;
+    text-align: center;
+}
+
+.header {
+    background-position: center;
+    background-color: #F1F1F1;
+    text-align: center;
+    padding: 20px;
+    width: 450px;
+    height: 450px;
+    margin: 0 auto;
+    border-radius: 125px;
+    border: 1px solid #eeeeee;
+  }
+
+.image {
+    background-image: url(Yagyu\'s\ Informal\ Photograph.jpg);
+    background-color: #eaeaea;
+    background-size: cover;
+    border-radius: 150px;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    border: 1px solid #eaeaea;
+}
+
+
