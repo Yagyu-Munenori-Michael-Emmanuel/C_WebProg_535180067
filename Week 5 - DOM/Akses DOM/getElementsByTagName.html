@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript getElementsByTagName() Demo</title>
+</head>
+<body>
+    <h1>Contoh JavaScript getElementsByTagName()</h1>
+    <h2>Judul Pertama</h2>
+    <p>Paragraf Satu</p>
+    <h2>Judul Kedua</h2>
+    <p>Paragraf Kedua</p>
+    <h2>Judul Ketiga</h2>
+    <p>Paragraf Ketiga</p>
+
+    <button id="btnCount">Hitung H2</button>
+
+    <script>
+        let btn = document.getElementById('btnCount');
+        btn.addEventListener('click', () => {
+            let headings = document.getElementsByTagName('h2');
+            alert(`Total jumlah H2 : ${headings.length}`);
+        });
+    </script>
+</body>
+
+</html>

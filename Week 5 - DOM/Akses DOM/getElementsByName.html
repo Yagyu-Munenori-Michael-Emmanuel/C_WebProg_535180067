@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Contoh getElementsByName</title>
+</head>
+<body>
+    <p>Bagaimana menurut Anda pelayanan kami?</p>
+    <p>
+        <input type="radio" name="rate" value="Sangat Buruk"> Sangat Buruk
+        <input type="radio" name="rate" value="Buruk"> Buruk
+        <input type="radio" name="rate" value="Cukup Baik"> Cukup Baik
+        <input type="radio" name="rate" value="Baik"> Baik
+        <input type="radio" name="rate" value="Sangat Baik"> VSangat Baik
+    </p>
+    <p>
+        <button id="btnRate">Submit</button>
+    </p>
+    <script>
+        var btn = document.getElementById('btnRate');
+
+        btn.addEventListener('click', () => {
+            var rates = document.getElementsByName('rate');
+            rates.forEach((rate) => {
+                if (rate.checked) {
+                    alert(`Penilaianmu : ${rate.value}`);
+                }
+            })
+        });
+    </script>
+</body>
+</html>

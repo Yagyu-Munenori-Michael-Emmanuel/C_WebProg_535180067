@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipe Node</title>
+</head>
+<body>
+
+    <p id="myP">Klik tombol dibawah untuk mendapatkan Tipe Node dari elemen ini.</p>
+
+    <button onclick="myFunction()">Pencet Aku!</button>
+
+    <p id="demo"></p>
+
+    <script>
+    function myFunction() {
+    var x = document.getElementById("myP").nodeType;
+    document.getElementById("demo").innerHTML = x;
+    }
+    </script>
+</body>
+</html>
