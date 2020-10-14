@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Java Script Praktikum 4</title>
+
+    <style>
+        .MakeRed {
+            color: red;
+        }
+
+        .Hide {
+            visibility: hidden;
+        }
+
+        .Show {
+            visibility: visible;
+        }
+    </style>
+	<script language="JavaScript" type="text/javascript">
+	function kalkulator() {
+
+		//variable angka satu
+		var angkaSatu = parseInt(document.getElementById("angkaSatu").value);
+
+		//variable angka dua
+		var angkaDua = parseInt(document.getElementById("angkaDua").value);
+
+		//variable operasi aritmatik
+		var op = document.getElementById("op").value;
+
+		//variable angka hasil
+		var hasil = document.getElementById("hasil");
+
+		//variable untuk total angka satu dan angka dua
+		var total;
+
+		if (isNaN(angkaSatu) || isNaN(angkaDua)) {
+			alert('isi form dengan angka!')
+
+		} else {
+
+			if (op == "+") {
+				total = angkaSatu + angkaDua;
+			} else if (op == "-") {
+				total = angkaSatu - angkaDua;
+		}
+
+		hasil.value = total;
+		}
+	}
+	function AddString(id, str1, str2) {
+            document.getElementById(id).innerHTML = str1 + str2;
+        }
+	var str = "#EVOSROAR";
+        function ForLoop(iteration) {
+            for (i = 0; i < iteration; i++) {
+                document.getElementById("oResult").innerHTML += str + "<br />";
+            }
+        }
+	var hobbies = [];
+
+        function AddHobby(pHobby) {
+            hobbies.push(pHobby);
+            document.getElementById("iHobby").value = "";
+            document.getElementById("iHobby").focus();
+            console.log(hobbies.length);
+        }
+
+        function InLoop() {
+            var item;
+            for (item of hobbies) {
+                document.getElementById("uResult").innerHTML += item + "<br />";
+            }
+        }
+	</script>
+</head>
+
+<body>
+
+    <script>
+        function changeLine1Style() {
+            document.getElementById("cLine1").className = "MakeRed";
+        }
+        function ChangeStyle(id, classname) {
+            document.getElementById(id).className = classname;
+        }
+		function ChangeAll(str){
+            document.getElementById("cLine1").innerHTML = str;
+            document.getElementById("cLine2").innerHTML = str;
+            document.getElementById("cLine1").className="MakeRed";
+            document.getElementById("cLine2").className="MakeRed";
+        }
+		var data;
+
+        function Person(pEmail, pNIM, pNama) {
+            this.Email = pEmail;
+            this.NIM = pNIM;
+            this.Nama = pNama;
+            this.ValidasiData = function () {
+                if ((this.Email != "") && (this.NIM != "") && (this.Nama != "")) {
+                    return "TRUE";
+                } else {
+                    return "FALSE";
+                }
+            }
+        }
+
+        function CreateObject(pEmail, pNIM, pNama) {
+            data = new Person(pEmail, pNIM, pNama);
+        }
+
+        function LoadObject() {
+            document.getElementById("iPerson").value =
+                "Email: " + data.Email + " " +
+                "NIM: " + data.NIM + " " +
+                "Nama: " + data.Nama + " " +
+                "Validasi: " + data.ValidasiData();
+        }
+    </script>
+	
+	<button type="button" onclick='alert("Follow IG @nathan_ssi")'>Pencet Aku Dulu!</button>
+	
+	<br />
+
+    <button type="button" onclick='document.getElementById("cLine1").className="MakeRed"'>Go</button>
+    <p id="cLine1">Mama Loren makan odading</p>
+
+    <br />
+
+    <button type="button" onclick='document.getElementById("cLine2").className="Hide"'>Hide This</button>
+    <button type="button" onclick='ChangeStyle("cLine2","Show")'>Show This</button>
+    <p id="cLine2">Tombol suren ada di setting!!!</p>
+	
+	<br />
+	
+	<p id="cLine1">EVOS eSports</p>
+	<button type="button" onclick='ChangeAll("#EVOSROAR")'>Ubah dong</button>
+	
+	<br />
+	
+	<h4>Kalkulator +-</h4>
+    <input type="text" id="angkaSatu">
+    <select id="op">
+        <option value="+">+</option>
+        <option value="-">-</option>
+    </select>
+    <input type="text" id="angkaDua">
+    <input type="submit" onclick="kalkulator()" value="=">
+    <input type="text" id="hasil">
+	
+	<br />
+	
+    <p id="cLine3">Game moba yang lagi trend?</p>
+	<button type="button" onclick='AddString("cLine3", "Mobile", "Legend")'>Apa tuh</button>
+	
+	<br></br>
+	
+	<input type="number" id="iLoop" placeholder="Type number of iteration" style="width: 500px;">
+    <button type="button" onclick='ForLoop(document.getElementById("iLoop").value)'>Gaskeun</button>
+
+    <p id="oResult"></p>
+	
+	<br />
+	
+	<input type="text" id="iHobby" placeholder="Masukkin kata / kalimat apa aja" style="width: 500px;">
+    <button type="button" onclick='AddHobby(document.getElementById("iHobby").value)'>Masuk</button>
+    <button type="button" onclick='InLoop()'>Kasih dia tahu</button>
+
+    <p id="uResult"></p>
+	
+	<br />
+	
+	<input type="text" id="iEmail" placeholder="Masukkan Email" />
+    <input type="text" id="iNIM" placeholder="Masukkan NIM" />
+    <input type="text" id="iName" placeholder="Masukkan Nama" />
+
+    <button type="button"
+        onclick='CreateObject(document.getElementById("iEmail").value, document.getElementById("iNIM").value, document.getElementById("iName").value)'>Create</button>
+
+    <br />
+
+    <button type="button" onclick='LoadObject()'>Load</button>
+
+    <input type="text" id="iPerson" style="width: 550px;" height="100px" readonly />
+	
+	<br></br>
+	
+</body>
+
+</html>
